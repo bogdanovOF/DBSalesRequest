@@ -89,6 +89,7 @@ insert into @PRMTable ([INQID],[PACK_NUM], [STATUS], [PROD_TYPE], [DISCH], [COUN
 						   when a.[Вид поставки] = N'рулон' then 'РЛН'
 						   when a.[Вид поставки] = N'лента' then 'ЛНТ'
 						   when a.[Вид поставки] = N'рулон с роспуском' then 'РЛН РСП'
+                           WHEN a.[Вид поставки] = N'рулон с роспуском/лента' then 'РС/ЛН'
 						   else '' end,
 	   -- заявленный объем ВР
 	   [REQ_VOLUME]=case 
@@ -168,6 +169,7 @@ SELECT case
 	   when a.[Вид поставки] = N'рулон' then 'РЛН'
 	   when a.[Вид поставки] = N'лента' then 'ЛНТ'
 	   when a.[Вид поставки] = N'рулон с роспуском' then 'РЛН РСП'
+       WHEN a.[Вид поставки] = N'рулон с роспуском/лента' then 'РС/ЛН'
 	   else '' end,
 	   -- заявленный объем Экспорт
 	   case 
