@@ -11,8 +11,8 @@ ALTER procedure [dbo].[vygruzka_allactual_PRM]
 	@Pck_type int null
 )
 AS
---102122
---tt
+
+
 declare @CMonth as date=convert(date,DATETIMEOFFSETFROMPARTS(year(DATEADD(day,30,getdate())), month(DATEADD(day,30,getdate())),1,5,0,0,0,0,0,0))
 --declare @pknum as nvarchar(15)=(select right(replicate('0',15)+convert(nvarchar(max),max(convert(int,[PACK_NUM]))+1),15) from [QASWSPI]..[PI_PLANNING].[PI_SALES_REQUISITIONS])
 declare @pknum as nvarchar(15)=
